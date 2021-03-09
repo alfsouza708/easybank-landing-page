@@ -95,10 +95,28 @@ button,
   width: 26px;
   height: 2px;
   background-color: #2d314d;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform-origin: 2px 1px;
+          transform-origin: 2px 1px;
 }
 
 .header__menu > span:not(:last-child) {
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+}
+
+.header__menu.open > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header__menu.open > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__menu.open > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header__links a {
@@ -146,5 +164,15 @@ button,
 
 .header__cta:hover {
   opacity: 0.75;
+}
+
+.header .overlay {
+  position: fixed;
+  top: 3.75rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
+  background-image: linear-gradient(#2d314d, transparent);
 }
 /*# sourceMappingURL=style.css.map */
